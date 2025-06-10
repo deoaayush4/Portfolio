@@ -102,3 +102,19 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+}
