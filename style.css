@@ -1,0 +1,104 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+  text-align: center;
+}
+
+.main-header {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  animation: fadeIn 2s ease-in;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* Add to style.css after previous styles */
+
+/* Navbar */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 10px 0;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* About */
+.about {
+  padding: 60px 20px;
+  background: #f9fafc;
+}
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.about p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Skills */
+.skills {
+  padding: 60px 20px;
+  background: #ffffff;
+}
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: #e0e7ff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+  background: #1f2937;
+  color: #e5e7eb;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+.footer a {
+  color: #a5b4fc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
