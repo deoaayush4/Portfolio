@@ -1272,6 +1272,20 @@ a:hover {
     justify-content: center;
   }
 }
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: transparent; /* No black bg */
+  padding: 10px;
+  gap: 10px; /* Optional: space between links */
+}
+
+.navbar a {
+  padding: 8px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
 
 
 
