@@ -1287,5 +1287,11 @@ a:hover {
   white-space: nowrap;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 
