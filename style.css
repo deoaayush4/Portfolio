@@ -1265,3 +1265,13 @@ a:hover {
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+
