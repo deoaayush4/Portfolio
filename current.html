@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aayush | Latest Current Affairs</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for classic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header (Reused for consistency) -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>AAYUSH</h1>
+            <p>Staying Informed: Latest Current Affairs</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar (Reused for consistency) -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Current Affairs Section -->
+    <section class="project-detail section-spacing">
+        <h1>Global Insights: Key Events & Developments</h1>
+        <p class="project-intro">
+            In an ever-evolving world, staying abreast of current affairs is paramount. This section offers a glimpse into significant national and international developments, fostering informed perspectives on critical global and domestic issues.
+        </p>
+
+        <div class="project-grid">
+            <div class="project-details-card">
+                <h2><span class="icon">📰</span> **Global Climate Accord Progress**</h2>
+                <p>
+                    Delegates from across the globe recently concluded a pivotal summit, making significant strides towards new climate change mitigation targets. Discussions focused on renewable energy transition and international cooperation...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+
+            <div class="project-details-card">
+                <h2><span class="icon">🏛️</span> **New Economic Policy Unveiled in India**</h2>
+                <p>
+                    The Indian government has introduced a comprehensive new economic policy package aimed at boosting manufacturing and creating employment opportunities, with a focus on sustainable growth...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+
+            <div class="project-details-card">
+                <h2><span class="icon">🔬</span> **Breakthrough in AI Research**</h2>
+                <p>
+                    Researchers at a leading university have announced a groundbreaking advancement in artificial intelligence, with potential applications in healthcare and autonomous systems...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+
+            <div class="project-details-card">
+                <h2><span class="icon"> geopolitcs</span> **Regional Geopolitical Shifts**</h2>
+                <p>
+                    Recent diplomatic efforts have led to a significant de-escalation of tensions in a critical geopolitical region, opening avenues for dialogue and stability...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+
+            <div class="project-details-card">
+                <h2><span class="icon">🌱</span> **Sustainable Urban Development Project**</h2>
+                <p>
+                    A new initiative focusing on sustainable urban development has been launched in major cities, aiming to integrate green infrastructure and smart technologies...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+
+            <div class="project-details-card">
+                <h2><span class="icon">🛰️</span> **Space Exploration Mission Success**</h2>
+                <p>
+                    A national space agency successfully launched its latest exploratory mission to Mars, gathering unprecedented data that could redefine our understanding of the planet...
+                </p>
+                <a href="#" class="btn btn-outline btn-small">Read More</a>
+            </div>
+        </div>
+
+        <p class="project-intro small-note">
+            *Note: This page displays static placeholder content. In a live application, these articles would be dynamically fetched from news APIs or a content management system to provide real-time updates.*
+        </p>
+
+        <div class="button-group project-actions">
+            <a href="https://news.google.com" target="_blank" class="btn btn-solid"><span class="icon">🔍</span> Explore More News</a>
+            <a href="index.html" class="btn btn-outline"><span class="icon">🏠</span> Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer (Reused for consistency) -->
+    <footer class="footer">
+        <p>&copy; 2025 Aayush.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to make Read More buttons functionally link to Google News (for demo)
+        document.querySelectorAll('.btn-small').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                window.open('https://news.google.com', '_blank'); // Open Google News in new tab
+            });
+        });
+    </script>
+
+</body>
+</html>

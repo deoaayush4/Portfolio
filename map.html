@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aayush | Political Maps</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for classic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the map display area */
+        .map-container {
+            background: var(--color-background-medium);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: var(--shadow-subtle);
+            padding: 20px;
+            margin-top: 3rem;
+            min-height: 400px; /* Ensure space even if no map selected */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensure images don't overflow */
+        }
+
+        .map-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: none; /* Hidden by default */
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .map-container img.active {
+            display: block; /* Show active image */
+            opacity: 1;
+        }
+
+        .map-selection-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        /* Adjust button size for map selection */
+        .map-selection-buttons .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Specific style for active map button */
+        .map-selection-buttons .btn.active-map {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: var(--color-text-light);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Reused for consistency) -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>AAYUSH</h1>
+            <p>Geopolitical Insights: Political Maps</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar (Reused for consistency) -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Political Map Section -->
+    <section class="project-detail section-spacing">
+        <h1>Explore Political Landscapes</h1>
+        <p class="project-intro">
+            Navigate the administrative divisions of the world, India, and its states. Select a map below to visualize geographical and political boundaries.
+        </p>
+
+        <div class="map-selection-buttons">
+            <button class="btn btn-solid active-map" data-map="world-map">World Political Map</button>
+            <button class="btn btn-outline" data-map="india-map">Indian Political Map</button>
+            <button class="btn btn-outline" data-map="state-map">Indian State Maps</button>
+        </div>
+
+        <div class="map-container">
+            <img id="world-map-img" class="active" src="https://placehold.co/1000x562/334E68/F8F8F8?text=World+Political+Map" alt="World Political Map">
+            <img id="india-map-img" src="https://placehold.co/700x800/334E68/F8F8F8?text=Indian+Political+Map" alt="Indian Political Map">
+            <img id="state-map-img" src="https://placehold.co/600x700/334E68/F8F8F8?text=Indian+States+Map" alt="Indian State Maps">
+            <p id="map-placeholder-text" style="display: none;">Select a map to view.</p>
+        </div>
+
+        <p class="project-intro small-note" style="margin-top: 3rem;">
+            *Note: These are placeholder maps. A full-featured implementation would involve interactive maps (e.g., using D3.js or Mapbox) with more granular state-level details, zoom, and pan functionalities.*
+        </p>
+
+        <div class="button-group project-actions">
+            <a href="index.html" class="btn btn-solid"><span class="icon">🏠</span> Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer (Reused for consistency) -->
+    <footer class="footer">
+        <p>&copy; 2025 Aayush.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapButtons = document.querySelectorAll('.map-selection-buttons .btn');
+            const mapImages = {
+                'world-map': document.getElementById('world-map-img'),
+                'india-map': document.getElementById('india-map-img'),
+                'state-map': document.getElementById('state-map-img')
+            };
+            const mapPlaceholderText = document.getElementById('map-placeholder-text');
+
+            // Function to show a specific map
+            function showMap(mapId) {
+                // Hide all images and deactivate all buttons
+                for (const key in mapImages) {
+                    mapImages[key].classList.remove('active');
+                }
+                mapButtons.forEach(button => button.classList.remove('active-map', 'btn-solid'));
+                mapButtons.forEach(button => button.classList.add('btn-outline'));
+
+                // Show the selected image and activate its button
+                if (mapImages[mapId]) {
+                    mapImages[mapId].classList.add('active');
+                    mapPlaceholderText.style.display = 'none';
+                    document.querySelector(`[data-map="${mapId}"]`).classList.add('active-map', 'btn-solid');
+                    document.querySelector(`[data-map="${mapId}"]`).classList.remove('btn-outline');
+                } else {
+                    // Fallback if mapId is invalid
+                    mapPlaceholderText.style.display = 'block';
+                }
+            }
+
+            // Add event listeners to buttons
+            mapButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const mapType = this.getAttribute('data-map');
+                    showMap(mapType);
+                });
+            });
+
+            // Initially show the world map
+            showMap('world-map');
+        });
+    </script>
+
+</body>
+</html>
