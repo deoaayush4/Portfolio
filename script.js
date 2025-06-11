@@ -112,3 +112,16 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const mainName = document.getElementById("mainName");
+
+  if (mainName) {
+    // Fade out slightly after scrolling 100px
+    let opacity = 1 - scrollY / 300;
+    if (opacity < 0.3) opacity = 0.3;
+    mainName.style.opacity = opacity;
+  }
+});
+
